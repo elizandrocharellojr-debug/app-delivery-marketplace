@@ -1,0 +1,12 @@
+node_modules
+data
+.env
+.env.example
+.git
+.gitignore
+*.log
+Thumbs.db
+.DS_Store
+logos.pdf
+.claude
+test
