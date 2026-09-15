@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Item - Alloo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#00a868" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alloo" />
+  </head>
+  <body>
+    <div class="app-shell store-shell">
+      <header class="app-header category-header">
+        <div class="header-top">
+          <a href="./store.html" class="back-btn" aria-label="Voltar para a loja">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          <div class="brand-block category-brand">
+            <span class="brand-subtitle" id="item-store-name">Loja</span>
+            <strong class="brand-title">Item</strong>
+          </div>
+          <a href="./cart.html" class="action-btn" aria-label="Ver carrinho">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </div>
+      </header>
+
+      <main class="home-content">
+        <section class="stores-section">
+          <div class="form-card item-detail-card">
+            <div class="item-detail-hero" id="item-detail-hero"></div>
+            <div class="item-detail-copy">
+              <strong class="item-detail-title" id="item-detail-title">Item</strong>
+              <span class="item-detail-price" id="item-detail-price">R$ 0,00</span>
+              <p class="item-detail-description" id="item-detail-description"></p>
+              <div class="store-rating-summary" id="item-rating-summary"></div>
+            </div>
+            <div class="inline-message" id="item-detail-message"></div>
+            <button class="primary-button" type="button" id="item-add-cart-button">
+              Adicionar ao carrinho
+            </button>
+          </div>
+        </section>
+        <section class="stores-section" id="item-reviews-section"></section>
+      </main>
+
+      <a class="floating-cart-button hidden" href="./cart.html" id="global-floating-cart-button">
+        <span class="floating-cart-info">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="global-floating-cart-count">0</span> item(ns)
+        </span>
+        <span class="floating-cart-label">Ver carrinho <i class="fas fa-chevron-right"></i></span>
+      </a>
+    </div>
+
+    <script src="./src/data/seed.js"></script>
+    <script src="./src/data/database.js"></script>
+    <script src="./src/push.js"></script>
+    <script src="./src/cart-floating.js"></script>
+    <script src="./src/item.js"></script>
+    <script src="./src/back.js"></script>
+  </body>
+</html>
+ 

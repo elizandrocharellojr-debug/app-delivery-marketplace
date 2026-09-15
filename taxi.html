@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Painel do taxista - Alloo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Leaflet + OpenStreetMap: única forma prática de mostrar um mapa de
+         verdade sem precisar de chave de API paga (ex.: Google Maps). É a
+         primeira biblioteca de front-end externa do projeto (o resto foi
+         construído sem depender de nenhuma). -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <meta name="theme-color" content="#00a868" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alloo Taxista" />
+  </head>
+  <body>
+    <div class="app-shell login-shell" id="taxi-login-screen">
+      <main class="login-page">
+        <section class="login-hero">
+          <h1 class="login-title">Alloo</h1>
+        </section>
+
+        <section class="form-card login-card">
+          <div class="login-card-head">
+            <h2 class="login-card-title">Painel do taxista</h2>
+          </div>
+
+          <form id="taxi-login-form">
+            <label class="field login-field">
+              <span>Usuário</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-user"></i>
+                <input type="text" id="taxi-username-input" placeholder="Seu usuário" autocomplete="username" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Senha</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="taxi-password-input"
+                  placeholder="Digite a senha"
+                  autocomplete="current-password"
+                />
+              </div>
+            </label>
+            <button class="primary-button" type="submit">Entrar</button>
+          </form>
+
+          <div class="login-help-links">
+            <a class="login-inline-link" href="./forgot-password.html?type=taxi">Esqueceu sua senha?</a>
+          </div>
+
+          <div class="inline-message" id="taxi-login-message"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="taxi-driver-app" id="taxi-panel-screen" hidden>
+      <div id="taxi-map" class="taxi-driver-map"></div>
+
+      <header class="taxi-driver-topbar">
+        <button type="button" class="taxi-driver-icon-btn" id="taxi-menu-button" aria-label="Corridas de hoje">
+          <i class="fas fa-bars"></i>
+        </button>
+        <button type="button" class="taxi-driver-online-pill" id="taxi-online-toggle" aria-pressed="false">
+          <span class="taxi-driver-status-dot"></span>
+          <span id="taxi-online-toggle-label">Offline</span>
+        </button>
+        <button class="taxi-driver-icon-btn" type="button" id="taxi-logout-button" aria-label="Sair">
+          <i class="fas fa-right-from-bracket"></i>
+        </button>
+      </header>
+
+      <div class="taxi-driver-top-stack">
+        <div class="inline-message taxi-driver-verification-banner" id="taxi-verification-banner" hidden></div>
+
+        <div class="taxi-driver-earnings" id="taxi-earnings-card">
+          <span class="taxi-driver-earnings-label">Hoje</span>
+          <strong id="taxi-earnings-value">R$ 0,00</strong>
+          <span class="taxi-driver-earnings-trips" id="taxi-earnings-trips">0 corridas</span>
+        </div>
+      </div>
+
+      <p class="taxi-driver-connection-hint" id="taxi-connection-hint" hidden>
+        <i class="fas fa-plug-circle-exclamation"></i> Reconectando...
+      </p>
+
+      <div class="taxi-driver-sheet" id="taxi-driver-sheet">
+        <div class="taxi-driver-sheet-handle"></div>
+
+        <div id="taxi-sheet-content"></div>
+      </div>
+
+      <div class="taxi-driver-menu-screen" id="taxi-menu-screen" hidden>
+        <header class="taxi-driver-menu-header">
+          <strong>Corridas de hoje</strong>
+          <button type="button" class="taxi-driver-icon-btn" id="taxi-menu-close-button" aria-label="Fechar">
+            <i class="fas fa-xmark"></i>
+          </button>
+        </header>
+        <div class="taxi-driver-menu-summary" id="taxi-menu-summary"></div>
+        <div class="taxi-driver-menu-list" id="taxi-menu-list"></div>
+      </div>
+    </div>
+
+    <script src="./src/data/seed.js"></script>
+    <script src="./src/data/database.js"></script>
+    <script src="./src/taxi.js"></script>
+  </body>
+</html>

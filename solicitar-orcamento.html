@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Solicitar orçamento - Alloo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#00a868" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alloo" />
+  </head>
+  <body>
+    <div class="app-shell login-shell">
+      <main class="login-page">
+        <section class="login-hero">
+          <h1 class="login-title">Alloo</h1>
+        </section>
+
+        <section class="form-card login-card">
+          <div class="login-card-head">
+            <h2 class="login-card-title">Solicitar orçamento</h2>
+          </div>
+          <p class="muted-copy" style="margin: -8px 0 4px;">
+            Escolha um prestador e conte o que você precisa. Ele te responde direto por aqui.
+          </p>
+
+          <form id="budget-request-form">
+            <label class="field">
+              <span>Prestador</span>
+              <select class="field-select" id="provider-select"></select>
+            </label>
+            <div class="provider-verified-badge" id="provider-verified-badge" hidden>
+              <i class="fas fa-shield-halved"></i>
+              <span>Antecedentes criminais verificados pelo Alloo</span>
+            </div>
+            <label class="field login-field">
+              <span>Seu nome</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-user"></i>
+                <input type="text" id="customer-name-input" placeholder="" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Telefone</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="customer-phone-input" placeholder="" />
+              </div>
+            </label>
+            <label class="field">
+              <span>Seu bairro ou referência</span>
+              <input type="text" id="location-input" placeholder="Ex.: Centro" />
+            </label>
+            <label class="field">
+              <span>O que você precisa?</span>
+              <textarea class="field-textarea" id="message-input" rows="4" placeholder="Descreva o problema ou o serviço que você precisa"></textarea>
+            </label>
+            <div class="login-secondary-actions">
+              <a class="secondary-button login-link-button-solid back-link" href="./index.html">Voltar</a>
+              <button class="primary-button" type="submit">Enviar solicitação</button>
+            </div>
+          </form>
+
+          <div class="inline-message" id="budget-request-message"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./src/solicitar-orcamento.js"></script>
+    <script src="./src/back.js"></script>
+  </body>
+</html>

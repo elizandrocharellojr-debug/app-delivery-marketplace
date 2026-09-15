@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Pagar atendimento - Alloo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#00a868" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alloo" />
+  </head>
+  <body>
+    <div class="app-shell login-shell">
+      <main class="login-page">
+        <section class="login-hero">
+          <h1 class="login-title">Alloo</h1>
+        </section>
+
+        <section class="form-card login-card">
+          <div class="login-card-head">
+            <h2 class="login-card-title">Pagar atendimento</h2>
+          </div>
+
+          <div class="login-secondary-actions" style="margin: -6px 0 8px">
+            <a class="secondary-button back-link" href="./home.html">Voltar</a>
+          </div>
+
+          <div id="booking-loading-state" class="muted-copy">Carregando os dados do seu orçamento...</div>
+
+          <div id="booking-not-found-state" hidden>
+            <div class="inline-message" data-state="error">
+              Não encontramos esse atendimento. Confira o link que o prestador te mandou, ou peça pra ele te enviar
+              de novo.
+            </div>
+          </div>
+
+          <div id="booking-summary-state" hidden>
+            <div class="admin-verify-meta" style="margin-bottom: 14px">
+              <span id="booking-provider-name"></span>
+              <span id="booking-service-name"></span>
+              <span id="booking-scheduled-at"></span>
+              <span><strong>Valor: </strong><span id="booking-price"></span></span>
+            </div>
+
+            <div id="booking-already-paid-state" hidden>
+              <div class="inline-message" data-state="success">
+                Esse atendimento já está pago. Obrigado! Pode fechar essa página.
+              </div>
+            </div>
+
+            <div id="booking-cancelled-state" hidden>
+              <div class="inline-message" data-state="error">
+                Esse atendimento foi cancelado, então não é mais possível pagar por aqui.
+              </div>
+            </div>
+
+            <div id="booking-payment-choice">
+              <p class="muted-copy">Como você quer pagar?</p>
+              <div class="checkout-actions" style="flex-wrap: wrap">
+                <button class="primary-button" type="button" id="pay-pix-button">Pagar com Pix</button>
+                <button class="secondary-button" type="button" id="pay-card-button">Pagar com cartão</button>
+                <button class="secondary-button" type="button" id="pay-cash-button" hidden>Pagar em dinheiro ao prestador</button>
+              </div>
+            </div>
+
+            <div id="booking-payment-area"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./src/pagar-atendimento.js"></script>
+    <script src="./src/back.js"></script>
+  </body>
+</html>

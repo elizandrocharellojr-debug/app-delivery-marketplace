@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Perfil - Morretes Delivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#00a868" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alloo" />
+  </head>
+  <body>
+    <div class="app-shell customer-shell">
+      <header class="app-header">
+        <div class="home-utility-row">
+          <a class="icon-circle-button" href="./home.html" aria-label="Voltar para inicio">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          <button class="icon-circle-button" type="button" id="profile-menu-button" aria-label="Mais opções">
+            <i class="fas fa-ellipsis"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="home-content">
+        <section class="stores-section profile-hero">
+          <div class="profile-avatar" id="profile-avatar">?</div>
+          <div class="profile-hero-text">
+            <strong id="profile-hero-name">Cliente</strong>
+            <span id="profile-hero-email"></span>
+          </div>
+        </section>
+
+        <section class="stores-section">
+          <div class="loyalty-card">
+            <div class="loyalty-card-text">
+              <span class="loyalty-card-label">Clube Alloo</span>
+              <strong class="loyalty-card-points" id="loyalty-points-text">0 pontos</strong>
+            </div>
+            <div class="loyalty-card-icon">🎁</div>
+          </div>
+        </section>
+
+        <section class="stores-section">
+          <div class="profile-menu-list">
+            <a class="profile-menu-item" href="./meus-dados.html">
+              <span class="profile-menu-emoji">🙍</span>
+              <span class="profile-menu-name">Meus dados</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </a>
+            <a class="profile-menu-item" href="./enderecos.html">
+              <span class="profile-menu-emoji">📍</span>
+              <span class="profile-menu-name">Meus endereços</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </a>
+            <a class="profile-menu-item" href="./pedir-corrida.html">
+              <span class="profile-menu-emoji">🚕</span>
+              <span class="profile-menu-name">Pedir corrida de táxi</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </a>
+            <button class="profile-menu-item" type="button" id="payment-info-toggle">
+              <span class="profile-menu-emoji">💳</span>
+              <span class="profile-menu-name">Formas de pagamento</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </button>
+            <div class="profile-menu-note" id="payment-info-note" hidden>
+              Aceitamos Pix e cartão de crédito ou débito pelo app, além de dinheiro na entrega em lojas que permitirem.
+            </div>
+            <a class="profile-menu-item" href="./orders.html">
+              <span class="profile-menu-emoji">🧾</span>
+              <span class="profile-menu-name">Histórico de pedidos</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </a>
+            <a class="profile-menu-item" href="./favorites.html">
+              <span class="profile-menu-emoji">❤️</span>
+              <span class="profile-menu-name">Meus favoritos</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </a>
+            <a class="profile-menu-item" href="./partner-interest.html?kind=servico">
+              <span class="profile-menu-emoji">🛠️</span>
+              <span class="profile-menu-name">Virar prestador de serviço</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </a>
+            <a class="profile-menu-item" href="./cupons.html">
+              <span class="profile-menu-emoji">🎟️</span>
+              <span class="profile-menu-name">Cupons</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </a>
+            <a class="profile-menu-item" href="./ajuda.html">
+              <span class="profile-menu-emoji">❓</span>
+              <span class="profile-menu-name">Ajuda</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </a>
+            <button class="profile-menu-item" type="button" id="customer-logout-button">
+              <span class="profile-menu-emoji">🚪</span>
+              <span class="profile-menu-name">Sair da conta</span>
+              <i class="fas fa-chevron-right profile-menu-chevron"></i>
+            </button>
+          </div>
+        </section>
+
+        <p class="profile-footer-version">Alloo</p>
+      </main>
+
+      <nav class="bottom-nav">
+        <a class="nav-item" href="./home.html">
+          <i class="fas fa-home"></i>
+          <span>Início</span>
+        </a>
+        <a class="nav-item" href="./buscar.html">
+          <i class="fas fa-search"></i>
+          <span>Buscar</span>
+        </a>
+        <a class="nav-item" href="./orders.html">
+          <i class="fas fa-cube"></i>
+          <span>Pedidos</span>
+        </a>
+        <a class="nav-item active" href="./profile.html">
+          <i class="fas fa-user"></i>
+          <span>Perfil</span>
+        </a>
+      </nav>
+    </div>
+
+    <script src="./src/data/seed.js"></script>
+    <script src="./src/data/database.js"></script>
+    <script src="./src/push.js"></script>
+    <script src="./src/profile.js"></script>
+  </body>
+</html>

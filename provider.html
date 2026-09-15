@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do prestador - Alloo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest-prestador.json" />
+    <meta name="theme-color" content="#00a868" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alloo Prestador" />
+  </head>
+  <body>
+    <div class="app-shell login-shell" id="provider-login-screen">
+      <main class="login-page">
+        <section class="login-hero">
+          <h1 class="login-title">Alloo</h1>
+        </section>
+
+        <section class="form-card login-card">
+          <div class="login-card-head">
+            <h2 class="login-card-title">Painel do prestador</h2>
+          </div>
+
+          <form id="provider-login-form">
+            <label class="field login-field">
+              <span>Usuário</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-user"></i>
+                <input type="text" id="provider-username-input" placeholder="Seu usuário" autocomplete="username" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Senha</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="provider-password-input"
+                  placeholder="Digite a senha"
+                  autocomplete="current-password"
+                />
+              </div>
+            </label>
+            <button class="primary-button" type="submit">Entrar</button>
+          </form>
+
+          <div class="login-help-links">
+            <a class="login-inline-link" href="./forgot-password.html?type=provider">Esqueceu sua senha?</a>
+          </div>
+
+          <div class="inline-message" id="provider-login-message"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="admin-dash" id="provider-panel-screen" hidden>
+      <aside class="admin-dash-sidebar">
+        <div class="admin-dash-brand">
+          <img src="./assets/icon.svg" alt="" class="admin-dash-logo" />
+          <span>Alloo</span>
+        </div>
+
+        <nav class="admin-dash-nav" id="provider-dash-nav">
+          <button class="admin-dash-nav-item active" type="button" data-section="solicitacoes">
+            <i class="fas fa-inbox"></i>
+            <span>Solicitações</span>
+          </button>
+          <button class="admin-dash-nav-item" type="button" data-section="agenda">
+            <i class="fas fa-calendar-days"></i>
+            <span>Agenda</span>
+          </button>
+          <button class="admin-dash-nav-item" type="button" data-section="servicos">
+            <i class="fas fa-toolbox"></i>
+            <span>Serviços e preços</span>
+          </button>
+          <button class="admin-dash-nav-item" type="button" data-section="ganhos">
+            <i class="fas fa-sack-dollar"></i>
+            <span>Ganhos</span>
+          </button>
+          <button class="admin-dash-nav-item" type="button" data-section="avaliacoes">
+            <i class="fas fa-star"></i>
+            <span>Avaliações</span>
+          </button>
+        </nav>
+
+        <button class="admin-dash-status-toggle" type="button" id="provider-availability-toggle">
+          <span class="admin-dash-status-label">Disponibilidade</span>
+          <span class="admin-dash-status-row">
+            <strong id="provider-availability-text">Disponível</strong>
+            <span class="item-toggle-switch admin-dash-status-switch" id="provider-availability-switch" aria-hidden="true"></span>
+          </span>
+        </button>
+
+        <button class="admin-dash-logout" type="button" id="provider-logout-button">
+          <i class="fas fa-right-from-bracket"></i>
+          <span>Sair</span>
+        </button>
+      </aside>
+
+      <main class="admin-dash-main">
+        <header class="admin-dash-topbar">
+          <div>
+            <h1 id="provider-panel-title">Prestador</h1>
+            <p class="admin-dash-topbar-sub" id="provider-panel-subtitle">Painel do prestador</p>
+          </div>
+          <div class="admin-dash-topbar-kpis">
+            <div class="admin-dash-kpi-card admin-dash-kpi-card-compact">
+              <span class="admin-dash-kpi-label">Ganhos na semana</span>
+              <strong id="kpi-week-earnings">–</strong>
+            </div>
+            <div class="admin-dash-kpi-card admin-dash-kpi-card-compact">
+              <span class="admin-dash-kpi-label">Taxa de resposta</span>
+              <strong id="kpi-response-rate">–</strong>
+            </div>
+          </div>
+        </header>
+
+        <section class="admin-dash-section" id="provider-section-solicitacoes">
+          <div class="admin-dash-row-2col">
+            <div class="admin-dash-card">
+              <div class="admin-dash-card-head">
+                <h2>Solicitações de orçamento</h2>
+                <span class="admin-dash-badge" id="requests-count-badge">0</span>
+              </div>
+              <div id="requests-list" class="admin-dash-requests-list"></div>
+            </div>
+
+            <div class="admin-dash-card">
+              <div class="admin-dash-card-head">
+                <h2>Agenda de hoje</h2>
+              </div>
+              <div id="agenda-today-list" class="admin-dash-agenda-list"></div>
+            </div>
+          </div>
+
+          <div class="admin-dash-card">
+            <div class="admin-dash-card-head">
+              <h2>Meus serviços</h2>
+              <button class="admin-dash-small-button" type="button" id="services-preview-add-button">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+            <div id="services-preview-list" class="admin-dash-service-list"></div>
+          </div>
+        </section>
+
+        <section class="admin-dash-section" id="provider-section-agenda" hidden>
+          <div class="admin-dash-card">
+            <div class="admin-dash-card-head">
+              <h2>Agenda completa</h2>
+            </div>
+            <div id="agenda-full-list" class="admin-dash-agenda-list"></div>
+          </div>
+        </section>
+
+        <section class="admin-dash-section" id="provider-section-servicos" hidden>
+          <div class="admin-dash-card">
+            <div class="admin-dash-card-head">
+              <h2>Visita técnica</h2>
+            </div>
+            <div class="muted-copy panel-intro">
+              Se pra dar o orçamento você precisa ver o serviço pessoalmente antes, defina aqui quanto cobra por
+              essa visita. Deixe 0 se não cobra - você continua podendo mandar o orçamento direto, sem visita.
+            </div>
+            <form id="visit-fee-form" class="admin-verify-edit-form">
+              <label class="field">
+                <span>Valor da visita (R$)</span>
+                <input type="number" min="0" step="0.01" id="visit-fee-input" placeholder="0" />
+              </label>
+              <div class="checkout-actions">
+                <button class="primary-button" type="submit">Salvar</button>
+              </div>
+            </form>
+            <div class="inline-message" id="visit-fee-message"></div>
+          </div>
+
+          <div class="admin-dash-card">
+            <div class="admin-dash-card-head">
+              <h2>Meus serviços</h2>
+              <button class="admin-dash-small-button" type="button" id="add-service-button">
+                <i class="fas fa-plus"></i> Novo serviço
+              </button>
+            </div>
+            <div class="muted-copy panel-intro">
+              Esses serviços aparecem pro cliente quando ele pede um orçamento pra você. O valor não é definido
+              aqui - você informa quanto cobrar depois, na hora de responder cada pedido.
+            </div>
+            <div id="services-editor-list" class="admin-dash-service-list"></div>
+            <div class="inline-message" id="services-message"></div>
+          </div>
+        </section>
+
+        <section class="admin-dash-section" id="provider-section-ganhos" hidden>
+          <div class="admin-dash-kpi-row admin-dash-kpi-row-2">
+            <div class="admin-dash-kpi-card">
+              <span class="admin-dash-kpi-label">Ganhos na semana</span>
+              <strong id="earnings-week-total">–</strong>
+            </div>
+            <div class="admin-dash-kpi-card">
+              <span class="admin-dash-kpi-label">Ganhos totais</span>
+              <strong id="earnings-total">–</strong>
+            </div>
+          </div>
+          <div class="admin-dash-card">
+            <div class="admin-dash-card-head">
+              <h2>Atendimentos</h2>
+            </div>
+            <div class="admin-dash-table-wrap">
+              <table class="admin-dash-table">
+                <thead>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>Serviço</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                    <th>Data</th>
+                  </tr>
+                </thead>
+                <tbody id="earnings-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-dash-section" id="provider-section-avaliacoes" hidden>
+          <div class="admin-dash-card">
+            <div class="admin-dash-card-head">
+              <h2>Avaliações dos clientes</h2>
+            </div>
+            <div id="provider-reviews-summary" class="admin-dash-reviews-summary"></div>
+            <div id="provider-reviews-list" class="admin-dash-reviews-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./src/provider.js"></script>
+  </body>
+</html>

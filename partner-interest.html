@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Ganhe dinheiro com o Alloo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#00a868" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alloo" />
+  </head>
+  <body>
+    <div class="app-shell login-shell">
+      <main class="login-page">
+        <section class="login-hero">
+          <h1 class="login-title">Alloo</h1>
+        </section>
+
+        <section class="form-card login-card" id="partner-type-card">
+          <div class="login-card-head">
+            <h2 class="login-card-title">Ganhe dinheiro com o Alloo</h2>
+          </div>
+          <p class="muted-copy" style="margin: 0 0 6px;">
+            Escolha como você quer atuar na plataforma. O cadastro é feito na hora - assim que enviar, sua conta já
+            sai pronta pra usar.
+          </p>
+
+          <div class="partner-type-list">
+            <button class="partner-type-option" type="button" data-type="estabelecimento">
+              <span class="partner-type-icon"><i class="fas fa-store"></i></span>
+              <span class="partner-type-body">
+                <strong>Tenho um estabelecimento</strong>
+                <span>Restaurante, mercado, farmácia ou loja que quer vender pelo Alloo</span>
+              </span>
+              <i class="fas fa-chevron-right partner-type-chevron"></i>
+            </button>
+
+            <button class="partner-type-option" type="button" data-type="motorista">
+              <span class="partner-type-icon"><i class="fas fa-taxi"></i></span>
+              <span class="partner-type-body">
+                <strong>Quero ser motorista</strong>
+                <span>Faça corridas de táxi pelo app e receba por elas</span>
+              </span>
+              <i class="fas fa-chevron-right partner-type-chevron"></i>
+            </button>
+
+            <button class="partner-type-option" type="button" data-type="prestador">
+              <span class="partner-type-icon"><i class="fas fa-screwdriver-wrench"></i></span>
+              <span class="partner-type-body">
+                <strong>Sou prestador de serviço</strong>
+                <span>Eletricista, encanador, diarista e outros serviços por orçamento</span>
+              </span>
+              <i class="fas fa-chevron-right partner-type-chevron"></i>
+            </button>
+          </div>
+
+          <div class="login-secondary-actions">
+            <a class="secondary-button login-link-button-solid back-link" href="./index.html">Voltar</a>
+          </div>
+        </section>
+
+        <section class="form-card login-card" id="partner-form-card" hidden>
+          <div class="login-card-head partner-form-head">
+            <button class="icon-circle-button" type="button" id="partner-form-back-button" aria-label="Voltar">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <h2 class="login-card-title" id="partner-form-title">Cadastro</h2>
+          </div>
+
+          <form id="partner-store-form" hidden>
+            <label class="field login-field">
+              <span>Nome da loja</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-store"></i>
+                <input type="text" id="store-signup-name" placeholder="Ex.: Restaurante da Praça" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Categoria</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-list"></i>
+                <select id="store-signup-category"></select>
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Nome do responsável</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-user"></i>
+                <input type="text" id="store-signup-owner-name" placeholder="" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>CPF do responsável</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-id-card"></i>
+                <input type="text" id="store-signup-cpf" placeholder="Só números" inputmode="numeric" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>CNPJ (opcional)</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-building"></i>
+                <input type="text" id="store-signup-cnpj" placeholder="Se já tiver empresa formalizada" inputmode="numeric" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Telefone</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="store-signup-phone" placeholder="(41) 99999-9999" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>E-mail</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="store-signup-email" placeholder="seu@email.com" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Descrição curta (opcional)</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-pen"></i>
+                <input type="text" id="store-signup-description" placeholder="Ex.: Barreado e pratos regionais" />
+              </div>
+            </label>
+
+            <p class="partner-form-section-title">Endereço da loja</p>
+            <label class="field login-field">
+              <span>CEP (opcional)</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-mail-bulk"></i>
+                <input type="text" id="store-signup-zip" placeholder="" inputmode="numeric" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Rua</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-road"></i>
+                <input type="text" id="store-signup-street" placeholder="" />
+              </div>
+            </label>
+            <div class="login-grid-two">
+              <label class="field login-field">
+                <span>Número</span>
+                <div class="login-input-wrap">
+                  <i class="fas fa-hashtag"></i>
+                  <input type="text" id="store-signup-number" placeholder="" />
+                </div>
+              </label>
+              <label class="field login-field">
+                <span>Bairro</span>
+                <div class="login-input-wrap">
+                  <i class="fas fa-location-dot"></i>
+                  <input type="text" id="store-signup-district" placeholder="" />
+                </div>
+              </label>
+            </div>
+            <label class="field login-field">
+              <span>Cidade</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-city"></i>
+                <input type="text" id="store-signup-city" placeholder="Ex.: Morretes" />
+              </div>
+            </label>
+
+            <label class="field login-field">
+              <span>Senha</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="store-signup-password" placeholder="Pelo menos 6 caracteres" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Confirmar senha</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="store-signup-password-confirm" placeholder="" />
+              </div>
+            </label>
+            <div class="login-secondary-actions">
+              <button class="primary-button" type="submit">Cadastrar loja</button>
+            </div>
+          </form>
+
+          <form id="partner-taxi-form" hidden>
+            <label class="field login-field">
+              <span>Nome completo</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-user"></i>
+                <input type="text" id="taxi-signup-name" placeholder="" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>CPF</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-id-card"></i>
+                <input type="text" id="taxi-signup-cpf" placeholder="Só números" inputmode="numeric" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Telefone</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="taxi-signup-phone" placeholder="(41) 99999-9999" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>E-mail</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="taxi-signup-email" placeholder="seu@email.com" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Veículo</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-car"></i>
+                <input type="text" id="taxi-signup-vehicle" placeholder="Ex.: Honda Civic prata" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Placa</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-hashtag"></i>
+                <input type="text" id="taxi-signup-plate" placeholder="Ex.: ABC1D23" />
+              </div>
+            </label>
+
+            <p class="partner-form-section-title">Carteira de motorista (CNH)</p>
+            <p class="muted-copy partner-form-section-hint">
+              Pra transportar passageiros, sua CNH precisa ser categoria B ou superior e ter a observação EAR
+              (Exerce Atividade Remunerada) - é a autorização que a lei exige pra dirigir por aplicativo. Sua conta é
+              criada na hora, mas você só consegue ficar online depois que a gente conferir os documentos. Se você só
+              tem a CNH digital (não tem o cartão físico), sem problema - mais abaixo tem a opção certa pra você.
+            </p>
+            <label class="field login-field">
+              <span>Número da CNH</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-address-card"></i>
+                <input type="text" id="taxi-signup-cnh-number" placeholder="" inputmode="numeric" />
+              </div>
+            </label>
+            <div class="login-grid-two">
+              <label class="field login-field">
+                <span>Categoria</span>
+                <div class="login-input-wrap">
+                  <i class="fas fa-layer-group"></i>
+                  <select id="taxi-signup-cnh-category">
+                    <option value="B">B</option>
+                    <option value="AB">AB</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                  </select>
+                </div>
+              </label>
+              <label class="field login-field">
+                <span>Validade</span>
+                <div class="login-input-wrap">
+                  <i class="fas fa-calendar"></i>
+                  <input type="date" id="taxi-signup-cnh-expires" />
+                </div>
+              </label>
+            </div>
+            <label class="partner-checkbox-field">
+              <input type="checkbox" id="taxi-signup-cnh-ear" />
+              <span>Minha CNH tem a observação EAR (Exerce Atividade Remunerada)</span>
+            </label>
+
+            <p class="partner-form-section-title">Você tem a CNH física ou só a digital?</p>
+            <div class="partner-radio-group">
+              <label class="partner-radio-field">
+                <input type="radio" name="taxi-signup-cnh-type" id="taxi-signup-cnh-type-fisica" value="fisica" checked />
+                <span>Tenho o cartão físico da CNH</span>
+              </label>
+              <label class="partner-radio-field">
+                <input type="radio" name="taxi-signup-cnh-type" id="taxi-signup-cnh-type-digital" value="digital" />
+                <span>Só tenho a CNH digital (app Vio)</span>
+              </label>
+            </div>
+
+            <div id="taxi-signup-cnh-physical-fields">
+              <label class="field login-field partner-file-field">
+                <span>Foto da frente da CNH</span>
+                <input type="file" id="taxi-signup-cnh-front-input" accept="image/*,application/pdf" />
+                <small class="partner-file-status" id="taxi-signup-cnh-front-status">Nenhum arquivo selecionado.</small>
+              </label>
+              <label class="field login-field partner-file-field">
+                <span>Foto do verso da CNH</span>
+                <input type="file" id="taxi-signup-cnh-back-input" accept="image/*,application/pdf" />
+                <small class="partner-file-status" id="taxi-signup-cnh-back-status">Nenhum arquivo selecionado.</small>
+              </label>
+            </div>
+
+            <div id="taxi-signup-cnh-digital-fields" hidden>
+              <div class="partner-instructions-box">
+                <p class="partner-instructions-title"><i class="fas fa-circle-info"></i> Como pegar o PDF da sua CNH digital (passo a passo)</p>
+                <ol class="partner-instructions-list">
+                  <li>Abra no seu celular o aplicativo <strong>Vio</strong> (o mesmo app oficial do governo antes chamado
+                    "Carteira Digital de Trânsito" - se não tiver, baixe gratuitamente na Play Store ou App Store e entre
+                    com sua conta gov.br).</li>
+                  <li>Dentro do app, toque na sua <strong>CNH</strong>.</li>
+                  <li>Toque no botão <strong>"Exportar"</strong>.</li>
+                  <li>Confirme tocando em <strong>"Exportar"</strong> de novo na mensagem que aparecer.</li>
+                  <li>O celular vai abrir as opções de compartilhar o arquivo PDF gerado - escolha
+                    <strong>"Salvar no arquivo"</strong>, <strong>Google Drive</strong> ou envie pra você mesmo (ex.: por
+                    e-mail) pra conseguir achar o arquivo depois.</li>
+                  <li>Volte aqui e toque em <strong>"Escolher arquivo"</strong> logo abaixo pra anexar esse PDF.</li>
+                </ol>
+                <p class="muted-copy" style="margin: 6px 0 0;">
+                  Esse PDF já vem com sua foto, categoria, validade e a observação EAR, além de um QR Code que a gente
+                  usa pra confirmar que o documento é autêntico. Não precisa anexar mais nada de CNH além dele.
+                </p>
+              </div>
+              <label class="field login-field partner-file-field">
+                <span>PDF da CNH digital (exportado do app Vio)</span>
+                <input type="file" id="taxi-signup-cnh-digital-input" accept="application/pdf,image/*" />
+                <small class="partner-file-status" id="taxi-signup-cnh-digital-status">Nenhum arquivo selecionado.</small>
+              </label>
+            </div>
+
+            <label class="field login-field partner-file-field">
+              <span>CRLV do veículo</span>
+              <input type="file" id="taxi-signup-crlv-input" accept="image/*,application/pdf" />
+              <small class="partner-file-status" id="taxi-signup-crlv-status">Nenhum arquivo selecionado.</small>
+            </label>
+            <label class="field login-field partner-file-field">
+              <span>Certidão de antecedentes criminais</span>
+              <input type="file" id="taxi-signup-criminal-record-input" accept="image/*,application/pdf" />
+              <small class="partner-file-status" id="taxi-signup-criminal-record-status">Nenhum arquivo selecionado.</small>
+              <small class="muted-copy">
+                Emita gratuitamente em
+                <a href="https://www.gov.br/pf/pt-br/servicos/antecedentes-criminais" target="_blank" rel="noopener">gov.br/pf</a>.
+              </small>
+            </label>
+
+            <label class="field login-field">
+              <span>Senha</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="taxi-signup-password" placeholder="Pelo menos 6 caracteres" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Confirmar senha</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="taxi-signup-password-confirm" placeholder="" />
+              </div>
+            </label>
+            <div class="login-secondary-actions">
+              <button class="primary-button" type="submit">Cadastrar como motorista</button>
+            </div>
+          </form>
+
+          <form id="partner-provider-form" hidden>
+            <label class="field login-field">
+              <span>Nome completo</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-user"></i>
+                <input type="text" id="provider-signup-name" placeholder="" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>CPF</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-id-card"></i>
+                <input type="text" id="provider-signup-cpf" placeholder="Só números" inputmode="numeric" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Telefone</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="provider-signup-phone" placeholder="(41) 99999-9999" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>E-mail</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="provider-signup-email" placeholder="seu@email.com" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Especialidade</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-screwdriver-wrench"></i>
+                <input type="text" id="provider-signup-specialty" placeholder="Ex.: Eletricista, Encanador, Diarista" />
+              </div>
+            </label>
+
+            <label class="field login-field partner-file-field">
+              <span>Certidão de antecedentes criminais (opcional)</span>
+              <input type="file" id="provider-signup-criminal-record-input" accept="image/*,application/pdf" />
+              <small class="partner-file-status" id="provider-signup-criminal-record-status">Nenhum arquivo selecionado.</small>
+              <small class="muted-copy">
+                Não é obrigatório pra usar o app - quem envia e tem o documento conferido pelo Alloo ganha um selo de
+                confiança visível pros clientes. Emita gratuitamente em
+                <a href="https://www.gov.br/pf/pt-br/servicos/antecedentes-criminais" target="_blank" rel="noopener">gov.br/pf</a>.
+              </small>
+            </label>
+
+            <label class="field login-field">
+              <span>Senha</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="provider-signup-password" placeholder="Pelo menos 6 caracteres" />
+              </div>
+            </label>
+            <label class="field login-field">
+              <span>Confirmar senha</span>
+              <div class="login-input-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="provider-signup-password-confirm" placeholder="" />
+              </div>
+            </label>
+            <div class="login-secondary-actions">
+              <button class="primary-button" type="submit">Cadastrar como prestador</button>
+            </div>
+          </form>
+
+          <div class="inline-message" id="partner-form-message"></div>
+        </section>
+
+        <section class="form-card login-card" id="partner-success-card" hidden>
+          <div class="login-card-head">
+            <h2 class="login-card-title">Cadastro feito com sucesso</h2>
+          </div>
+          <p id="partner-success-text"></p>
+          <div class="login-secondary-actions">
+            <a class="primary-button" id="partner-success-link" href="#">Entrar no painel</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./src/data/seed.js"></script>
+    <script src="./src/data/database.js"></script>
+    <script src="./src/partner-interest.js"></script>
+    <script src="./src/back.js"></script>
+  </body>
+</html>

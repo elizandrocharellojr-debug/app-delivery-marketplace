@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Meus dados - Alloo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#00a868" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alloo" />
+  </head>
+  <body>
+    <div class="app-shell customer-shell">
+      <header class="app-header category-header">
+        <div class="header-top">
+          <a href="./profile.html" class="back-btn" aria-label="Voltar para o perfil">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          <div class="brand-block category-brand">
+            <span class="brand-subtitle">Perfil</span>
+            <strong class="brand-title">Meus dados</strong>
+          </div>
+          <span class="action-btn-spacer"></span>
+        </div>
+      </header>
+
+      <main class="home-content">
+        <section class="stores-section">
+          <form class="form-card" id="profile-form">
+            <div class="section-header"><h2>Meus dados</h2></div>
+            <label class="field">
+              <span>Nome</span>
+              <input type="text" id="profile-name" />
+            </label>
+            <label class="field">
+              <span>Telefone</span>
+              <input type="text" id="profile-phone" />
+            </label>
+            <div class="inline-message" id="profile-message"></div>
+          </form>
+        </section>
+      </main>
+
+      <nav class="bottom-nav">
+        <a class="nav-item" href="./home.html">
+          <i class="fas fa-home"></i>
+          <span>Início</span>
+        </a>
+        <a class="nav-item" href="./buscar.html">
+          <i class="fas fa-search"></i>
+          <span>Buscar</span>
+        </a>
+        <a class="nav-item" href="./orders.html">
+          <i class="fas fa-cube"></i>
+          <span>Pedidos</span>
+        </a>
+        <a class="nav-item" href="./profile.html">
+          <i class="fas fa-user"></i>
+          <span>Perfil</span>
+        </a>
+      </nav>
+    </div>
+
+    <script src="./src/data/seed.js"></script>
+    <script src="./src/data/database.js"></script>
+    <script src="./src/push.js"></script>
+    <script src="./src/back.js"></script>
+    <script src="./src/meus-dados.js"></script>
+  </body>
+</html>

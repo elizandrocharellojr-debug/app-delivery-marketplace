@@ -1,0 +1,20 @@
+{
+  "name": "alloo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servidor central do app Alloo para uso na rede",
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "start:central": "node --env-file-if-exists=.env server.js",
+    "test": "node --test",
+    "backup": "node scripts/backup-db.js",
+    "set-admin-password": "node --env-file-if-exists=.env scripts/set-admin-password.js",
+    "criar-contas-teste": "node scripts/criar-contas-teste.js"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
+  }
+}
